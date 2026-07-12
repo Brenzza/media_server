@@ -1,0 +1,14 @@
+
+services:
+  filebrowser:
+    image: gtstef/filebrowser:stable
+    container_name: filebrowser
+    ports:
+      - "8081:80"
+    volumes:
+      - ./config:/config
+    environment:
+      - PUID=0
+      - PGID=0
+      - FILEBROWSER_ADMIN_PASSWORD=
+    restart: unless-stopped
